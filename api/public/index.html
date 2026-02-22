@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Million Likes Demo</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    .post {
+      border: 1px solid #ddd;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="post">
+  <h3 id="content">Loading...</h3>
+  <p>❤️ Likes: <span id="likes">0</span></p>
+  <button onclick="likePost()">Like</button>
+</div>
+
+<script>
+  const postId = 1;
+
+  async function loadPost() {
+    const res = await fetch(`http://localhost:3000/posts/${postId}`);
+    const data = await res.json();
+    document.getElementById("content").innerText = data.content;
+    document.getElementById("likes").innerText = data.like_count;
+  }
+
+  async function likePost() {
+    await fetch(`http://localhost:3000/posts/${postId}/like`, {
+      method: "POST"
+    });
+
+    loadPost();
+  }
+
+  loadPost();
+</script>
+
+</body>
+</html>
