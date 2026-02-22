@@ -22,6 +22,14 @@ A **real-time social media likes system** built with **Node.js**, **PostgreSQL**
 - **Queue:** Bull  
 - **Other Tools:** ioredis, pg
 
+## Query
+Create table:
+
+CREATE TABLE posts (
+  id SERIAL PRIMARY KEY,
+  content TEXT,
+  like_count BIGINT DEFAULT 0
+);
 
 ## Installation
 
