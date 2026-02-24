@@ -1,6 +1,10 @@
-# Million Likes Social Platform
+# 🚀 How Social Media Platforms Like Instagram Handle Millions of Likes in Real-Time?
 
-A **real-time social media likes system** built with **Node.js**, **PostgreSQL**, **Redis**, and **Bull queues**. This project allows posts to be liked instantly while ensuring scalable updates to the database using queues and caching for high-performance social applications.
+# ❤️ Million Likes Social Platform
+
+A scalable **real-time social media like system** built with **Node.js, PostgreSQL, Redis, and Bull Queue**.
+
+This project demonstrates how platforms like Instagram handle **millions of likes per second** using caching, background processing, and optimized database writes.
 
 
 ## Features
